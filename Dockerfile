@@ -11,3 +11,6 @@ RUN cd /opt/jemalloc && ./autogen.sh --enable-prof
 RUN cd /opt/jemalloc && make dist
 RUN cd /opt/jemalloc && make
 RUN cd /opt/jemalloc && make install
+
+COPY nmt-baseline.sh .
+COPY nmt-diff.sh .
