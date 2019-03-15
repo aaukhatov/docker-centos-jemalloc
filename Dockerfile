@@ -4,7 +4,7 @@ RUN yum upgrade -y; yum group install -y "Development Tools" ; \
     yum install -y wget tcl which zlib-devel git dockbook-xsl libxslt graphviz; \
     yum clean all
 
-RUN mkdir -p /opt && cd /opt && git clone https://github.com/jemalloc/jemalloc.git
+RUN mkdir -p /opt && cd /opt && git clone https://github.com/jemalloc/jemalloc.git && mkdir /tmp/jprof
 
 RUN cd /opt/jemalloc && git checkout -b stable-4 origin/stable-4
 RUN cd /opt/jemalloc && ./autogen.sh --enable-prof
