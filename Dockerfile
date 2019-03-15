@@ -1,7 +1,7 @@
 FROM aukhatov/centos-java:8u201-b09
 
 RUN yum upgrade -y; yum group install -y "Development Tools" ; \
-    yum install -y wget tcl which zlib-devel git dockbook-xsl libxslt graphviz; \
+    yum install -y wget tcl which zlib-devel git docbook-xsl libxslt graphviz; \
     yum clean all
 
 RUN mkdir -p /opt && cd /opt && git clone https://github.com/jemalloc/jemalloc.git && mkdir /tmp/jprof
