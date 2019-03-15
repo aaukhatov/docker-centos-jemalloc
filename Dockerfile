@@ -14,3 +14,6 @@ RUN cd /opt/jemalloc && make install
 
 COPY nmt-baseline.sh .
 COPY nmt-diff.sh .
+
+ENV LD_PRELOAD="/usr/local/lib/libjemalloc.so"
+ENV MALLOC_CONF="prof_leak:true,prof:true,lg_prof_interval:25,lg_prof_sample:18,prof_prefix:/tmp/jeprof"
